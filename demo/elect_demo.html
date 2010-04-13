@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+		<style type="text/css">
+			body { font-family:helvetica, arial; }
+			input.text, .elect-container {
+				display:block;
+				width:200px;
+				margin:12px 0px; }
+
+			input.submit { padding:5px 7px; }
+
+			.elect-element, input, textarea {
+				padding:6px 0px 4px 0px;
+				background:#fff;
+				border:1px #d7d7d7 solid;
+				color:#4d4d4d;
+				font-size:11px;
+				line-height:11px;
+				outline:none;
+				-webkit-border-radius:3px;
+				-moz-border-radius:3px;
+				border-radius:3px; }
+
+			.elect-element {
+				display:block;
+				width:200px;
+				background:#fff url(arrow.png) no-repeat 188px 9px; }
+
+			.elect-element.focused, input.focused, textarea.focused {
+				border-color:#000; }
+
+				.elect-element span {
+					padding-left:7px; }
+
+			.elect-options {
+				display:block;
+				width:200px;
+				padding:0px; margin:0px;
+				background:#fff;
+				border:1px #d7d7d7 solid;
+				-webkit-border-bottom-left-radius:3px;
+				-moz-border-radius-bottomleft:3px;
+				border-radius-bottomleft:3px;
+				-webkit-border-bottom-right-radius:3px;
+				-moz-border-radius-bottomright:3px;
+				border-radius-bottomright:3px; }
+
+				.elect-options li {
+					display:block;
+					color:#4d4d4d;
+					font-size:11px;
+					padding:6px 7px 4px 7px;
+					line-height:11px;
+					border-top:1px #eee solid; }
+
+				.elect-options li.first {
+					border-top:none; }
+
+				.elect-options li.hover {
+					background:#ddd; }
+
+				.elect-options li.selected {
+					font-weight:bold;
+					color:#000; }
+		</style>
+		<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+		<script type='text/javascript' src='../jquery.elect-0.9.5.js'></script>
+		<script type='text/javascript'>
+      $(document).ready( function(){
+				// This is it. Bind change events to the original select box.
+        $('select').elect();
+   
+        // This is just for the sake of styling the other controls like the Elect boxes
+        $('input, textarea, button').focus( function(){ $(this).addClass('focused'); });
+        $('input, textarea, button').blur( function(){ $(this).removeClass('focused'); });
+      });
+    </script>
+  </head>
+  <body>
+    <h2>Elect 0.9.5 Demo Page</h2>
+		<tt>Invoked via $('select').elect();</tt><br /><br />
+	<form method="get" action="" id="FFFFFORM">
+    <input name='a' class='text' type='text' />
+    <select name='b' class='option-list'>
+      <option value='option-0' class='klass' id='jd'>Eng</option>
+      <option value='option-1'>Agr</option>
+      <option value='option-2'>Beak</option>
+      <option value='option-3'>Teeth</option>
+      <option value='option-4' selected>Frog</option>
+      <option value='option-5'>Factory</option>
+      <option value='option-6'>Art</option>
+    </select>
+    <input name='c' class='text' type='text' />
+    <textarea name='d' style='width:400px; height:180px;'></textarea>
+    <select name='e' class='find-dealer-category'>
+      <option value='category-0'>Category 1</option>
+      <option value='category-1'>Category 2</option>
+      <option value='category-2'>Category 3</option>
+      <option value='category-3'>Category 4</option>
+      <option value='category-4'>Category 5</option>
+      <option value='category-5'>Category 6</option>
+      <option value='category-6'>Category 7</option>
+      <option value='category-7'>Category 8</option>
+      <option value='category-8'>Category 9</option>
+      <option value='category-9'>Category 10</option>
+      <option value='category-10'>Category 11</option>
+      <option value='category-11'>Category 12</option>
+    </select>
+    <select name='f' class='crisis'>
+      <option value='crisis-0'>Crisis No. 1</option>
+      <option value='crisis-1'>Crisis No. 2</option>
+      <option value='crisis-2'>Crisis No. 3</option>
+      <option value='crisis-3'>Crisis No. 4</option>
+      <option value='crisis-4'>Crisis No. 5</option>
+      <option value='crisis-5'>Crisis No. 6</option>
+      <option value='crisis-6'>Crisis No. 7</option>
+      <option value='crisis-7'>Crisis No. 8</option>
+      <option value='crisis-8' selected='selected'>Crisis No. 9</option>
+      <option value='crisis-9'>Crisis No. 10</option>
+      <option value='crisis-10'>Crisis No. 11</option>
+      <option value='crisis-11'>Crisis No. 12</option>
+    </select>
+    <input class='submit' type='submit' />
+    </form>
+  </body>
+</html>
